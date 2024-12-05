@@ -1,13 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import "./style.css";
 import { useState } from "react";
-
+  
 export default function Carousel() {
   const [state, setState] = useState(1);
+  const images = [
+    "https://placehold.co/1400x800",
+    "https://placehold.co/1400x800/orange/white",
+    "https://placehold.co/1400x800/red/black"
+  ];
 
   return (
-    <div className="carousel_wrapper">
+    <div className="overflow-hidden relative rounded-[--border-radius]">
       <div
         className="carousel_control_left"
         onClick={() => setState(state - 1 < 1 ? 1 : state - 1)}
@@ -26,15 +30,11 @@ export default function Carousel() {
         className="carousel"
         style={{ transform: `translateX(-${state - 1}00%)` }}
       >
-        <div className="carousel_item">
-          <img src="https://placehold.co/1400x800" alt="1" />
-        </div>
-        <div className="carousel_item">
-          <img src="https://placehold.co/1400x800/orange/white" alt="2" />
-        </div>
-        <div className="carousel_item">
-          <img src="https://placehold.co/1400x800/red/black" alt="3" />
-        </div>
+        {images.map((image, index) => (
+          <div className="carousel_item" key={index}>
+            <img src={image} alt={index.toString()} />
+          </div>
+        ))}
       </div>
       <div
         className="carousel_control_right"

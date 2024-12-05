@@ -1,99 +1,24 @@
-/* eslint-disable @next/next/no-img-element */
-import "./style.css";
+import { v4 as uuid } from "uuid";
+import Card from "@/shared/ui/card/Card";
 import Carousel from "@/widgets/carousel/Carousel";
+import { homePageData } from "@/shared/const/data";
 
 export default function Home() {
   return (
-    <>
-      <header className="header">
-        <div className="header_wrapper">
-          <div className="header_logo">
-            <a href="./">
-              {/* <img className="logo" src="assets/imgs/logo.png" alt="logo" /> */}
-            </a>
-          </div>
-          <nav className="header_nav">
-            <ul className="header_menu">
-              <li>
-                <a href="#">Contact</a>
-              </li>
-              <li>
-                <a href="./about.html">About</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <main className="main">
-        <Carousel />
-        <div className="blog">
-          <div className="blog_item">
-            <img
-              className="blog_item_img"
-              src="https://placehold.co/600x600"
-              alt="1"
-            />
-            <div className="blog_item_content">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Eveniet consequuntur ducimus debitis beatae iusto nisi pariatur
-                nam ipsam, laborum eum tempora minus officiis et quibusdam
-                commodi similique autem illum veritatis!
-              </p>
-            </div>
-          </div>
-          <div className="blog_item">
-            <img
-              className="blog_item_img"
-              src="https://placehold.co/600x600"
-              alt="1"
-            />
-            <div className="blog_item_content">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                quasi aliquam repellat harum soluta distinctio recusandae natus
-                accusantium fugit repellendus quidem numquam voluptas, hic ex
-                blanditiis, sapiente, adipisci doloremque enim?
-              </p>
-            </div>
-          </div>
-          <div className="blog_item">
-            <img
-              className="blog_item_img"
-              src="https://placehold.co/600x600"
-              alt="1"
-            />
-            <div className="blog_item_content">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                perspiciatis, quibusdam nesciunt error unde iure at perferendis
-                necessitatibus, aliquam omnis eveniet soluta minus nostrum.
-                Eligendi autem rem praesentium corrupti explicabo?
-              </p>
-            </div>
-          </div>
-          <div className="blog_item">
-            <img
-              className="blog_item_img"
-              src="https://placehold.co/600x600"
-              alt="1"
-            />
-            <div className="blog_item_content">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                perspiciatis, quibusdam nesciunt error unde iure at perferendis
-                necessitatibus, aliquam omnis eveniet soluta minus nostrum.
-                Eligendi autem rem praesentium corrupti explicabo?
-              </p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer className="footer">Footer</footer>
-    </>
+    <main className="max-w-[1400px] mx-auto">
+      <Carousel />
+      <div className="blog">
+        {homePageData.map((item) => (
+          <Card
+            key={uuid()}
+            className="blog_item"
+            img={item.img}
+            title={item.title}
+          >
+            {item.text}
+          </Card>
+        ))}
+      </div>
+    </main>
   );
 }
