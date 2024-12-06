@@ -1,7 +1,8 @@
 "use client";
 import "./style.css";
+import Arrow from "@/shared/assets/icons/arrow.svg";
 import { useState } from "react";
-  
+
 export default function Carousel() {
   const [state, setState] = useState(1);
   const images = [
@@ -13,43 +14,26 @@ export default function Carousel() {
   return (
     <div className="overflow-hidden relative rounded-[--border-radius]">
       <div
-        className="carousel_control_left"
+        className="carousel_control_left left-0 absolute top-0 z-[1] cursor-pointer h-[100%] w-[150px] flex items-center justify-center ease-in-out duration-[----duration-sm] select-none"
         onClick={() => setState(state - 1 < 1 ? 1 : state - 1)}
       >
-        <svg
-          className="arrow_left"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path d="M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z" />
-        </svg>
+        <Arrow className="arrow_left rotate-180 w-0 h-0 ease-in-out duration-[--duration-sm]" />
       </div>
       <div
-        className="carousel"
+        className="flex transition-[--transition-cb] duration-[--duration-md]"
         style={{ transform: `translateX(-${state - 1}00%)` }}
       >
         {images.map((image, index) => (
-          <div className="carousel_item" key={index}>
-            <img src={image} alt={index.toString()} />
-          </div>
+          <img key={index} src={image} alt={index.toString()} />
         ))}
       </div>
       <div
-        className="carousel_control_right"
+        className="carousel_control_right right-0 absolute top-0 z-[1] cursor-pointer h-[100%] w-[150px] flex items-center justify-center ease-in-out duration-[----duration-sm] select-none"
         onClick={() => setState(state + 1 > 3 ? 3 : state + 1)}
       >
-        <svg
-          className="arrow_right"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-        >
-          <path d="M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z" />
-        </svg>
+        <Arrow className="arrow_right w-0 h-0 ease-in-out duration-[--duration-sm] " />
       </div>
     </div>
   );
 }
+
