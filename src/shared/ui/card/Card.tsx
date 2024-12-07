@@ -1,16 +1,15 @@
 import { ReactNode } from "react";
 
 interface CardProps {
-  className?: string;
   img: string;
   title: string;
   children?: ReactNode;
 }
-export default function Card({ className, img, title, children }: CardProps) {
+export default function Card({ img, title, children }: CardProps) {
   return (
-    <div className={className}>
-      <img className="blog_item_img" src={img} alt={title} />
-      <div className="blog_item_content">
+    <div className="flex gap-[--gap-lg]">
+      <img className="w-[40%]" src={img} alt={title} />
+      <div className="w-[60%] flex flex-col items-center justify-center gap-[--gap-sm] text-[22px]">
         <h1>{title}</h1>
         <p>{children}</p>
       </div>

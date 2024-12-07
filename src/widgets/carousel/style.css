@@ -1,8 +1,0 @@
-.carousel_control_left:hover,
-.carousel_control_right:hover {
-  @apply bg-[--color-opacity];
-  .arrow_left,
-  .arrow_right {
-    @apply block h-[100px] w-[100px] p-[10px] border-[5px] rounded-[50%];
-  }
-}
