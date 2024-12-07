@@ -14,7 +14,7 @@
   --border-radius: 10px;
   --box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
   --transition-cb: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --duration-sm: 0.3s;
+  --duration-sm: 0.2s;
   --duration-md: 0.5s;
   --duration-lg: 1s;
 }
@@ -31,9 +31,5 @@
 body {
   padding: 0;
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  background-color: var(--color-p);
+  scrollbar-width: 0;
 }

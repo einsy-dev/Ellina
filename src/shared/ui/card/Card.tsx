@@ -8,7 +8,7 @@ interface CardProps {
 export default function Card({ img, title, children }: CardProps) {
   return (
     <div className="flex gap-[--gap-lg]">
-      <img className="w-[40%]" src={img} alt={title} />
+      <img className="w-[40%] rounded-[--border-radius]" src={img} alt={title} />
       <div className="w-[60%] flex flex-col items-center justify-center gap-[--gap-sm] text-[22px]">
         <h1>{title}</h1>
         <p>{children}</p>

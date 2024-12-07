@@ -1,5 +1,5 @@
 "use client";
-import Arrow from "@/shared/assets/icons/arrow.svg";
+import Arrow from "@/shared/ui/arrow/Arrow";
 import { useState } from "react";
 
 export default function Carousel() {

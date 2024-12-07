@@ -1,20 +1,39 @@
-import Button from "@/shared/ui/button/Button";
+"use client";
 
 export default function Header() {
   return (
-    <header className="bg-[--color-s] p-[--p-s]">
-      <div className="max-w-[1400px] mx-auto max-h-[100px] grid grid-cols-2 content-center">
-        <div className="flex w-fit h-[50px] bg-red-600">
-          <a href="./">
-            {/* <img className="" src="assets/imgs/logo.png" alt="logo" /> */}
+    <header className="bg-[--color-s] p-[--p-s] absolute w-full">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-row-reverse gap-[--gap-md]">
+          <a
+            href="#"
+            className=""
+            target="_blank"
+            title="whatsapp"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="size-[50px]"
+              src="/assets/images/whatsapp.png"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="#"
+            className=""
+            target="_blank"
+            title="telegram"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="size-[50px]"
+              src="/assets/images/telegram.png"
+              alt=""
+              loading="lazy"
+            />
           </a>
         </div>
-        <nav className="flex justify-end">
-          <ul className="grid grid-cols-2 items-center gap-[--gap-lg]">
-            <Button title="Contact" />
-            <Button title="About" />
-          </ul>
-        </nav>
       </div>
     </header>
   );
