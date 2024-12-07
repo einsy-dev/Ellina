@@ -12,10 +12,10 @@ export default function Carousel() {
   ];
 
   useSwipe((right: boolean) => {
-    if (!right) {
-      setState(state + 1 > 3 ? 3 : state + 1);
+    if (right) {
+      setState((prev) => (prev - 1 < 1 ? 1 : prev - 1));
     } else {
-      setState(state - 1 < 1 ? 1 : state - 1);
+      setState((prev) => (prev + 1 > 3 ? 3 : prev + 1));
     }
   }, []);
 

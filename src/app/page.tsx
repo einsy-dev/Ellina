@@ -13,7 +13,7 @@ export default function Home() {
           {homePageData.map((item) => (
             <Card key={uuid()} img={item.img} title={item.title}>
               {item.text ||
-                item.list?.map((item) => <li key={uuid()}>{item}</li>)}
+                item.list?.map((item) => <p key={uuid()}>{item}</p>)}
             </Card>
           ))}
         </div>

@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 
 const config = { sm: 440, md: 840, lg: 1200 };
