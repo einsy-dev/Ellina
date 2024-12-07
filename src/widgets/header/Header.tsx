@@ -2,9 +2,9 @@
 
 export default function Header() {
   return (
-    <header className="bg-[--color-s] p-[--p-s] absolute w-full">
+    <header className="bg-[--color-s] p-2 absolute w-full">
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-row-reverse gap-[--gap-md]">
+        <div className="flex flex-row-reverse gap-[--gap-sm] sm:gap-[--gap-md]">
           <a
             href="#"
             className=""
@@ -20,7 +20,7 @@ export default function Header() {
             />
           </a>
           <a
-            href="#"
+            href="https://t.me/Ellina_psiholog"
             className=""
             target="_blank"
             title="telegram"

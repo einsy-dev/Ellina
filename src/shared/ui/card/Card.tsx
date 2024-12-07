@@ -7,11 +7,17 @@ interface CardProps {
 }
 export default function Card({ img, title, children }: CardProps) {
   return (
-    <div className="flex gap-[--gap-lg]">
-      <img className="w-[40%] rounded-[--border-radius]" src={img} alt={title} />
-      <div className="w-[60%] flex flex-col items-center justify-center gap-[--gap-sm] text-[22px]">
-        <h1>{title}</h1>
-        <p>{children}</p>
+    <div className="flex flex-col lg:flex-row md:gap-[--gap-md] xl:gap-[--gap-lg]">
+      <div className="w-full lg:w-[40%] flex items-center">
+        <img
+          className="h-fit w-full lg:w-fit lg:rounded-[--border-radius] "
+          src={img}
+          alt={title}
+        />  
+      </div>
+      <div className="w-full lg:w-[60%] flex flex-col  gap-[--gap-sm] text-[22px]">
+        <h1 className="text-[2rem] sm:text-[3rem]">{title}</h1>
+        <p className="px-5 lg:px-0">{children}</p>
       </div>
     </div>
   );

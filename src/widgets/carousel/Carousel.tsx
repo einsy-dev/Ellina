@@ -1,4 +1,5 @@
 "use client";
+import useSwipe from "@/shared/hooks/useSwipe";
 import Arrow from "@/shared/ui/arrow/Arrow";
 import { useState } from "react";
 
@@ -10,8 +11,21 @@ export default function Carousel() {
     "https://placehold.co/1400x800/red/black"
   ];
 
+  useSwipe(
+    (right: boolean) => {
+      if (!right) {
+        setState(state + 1 > 3 ? 3 : state + 1);
+      } else {
+        setState(state - 1 < 1 ? 1 : state - 1);
+      }
+    },
+    [],
+    150
+  );
+
   const controlStyle =
-    "absolute top-0 z-[1] cursor-pointer h-[100%] w-[150px] flex items-center justify-center ease-in-out duration-[--duration-sm] select-none hover:bg-[--color-opacity]";
+    "absolute top-0 z-[1] cursor-pointer h-[100%] w-[8%]  flex items-center justify-center ease-in-out duration-[--duration-sm] select-none hover:bg-[--color-opacity]";
+  const controlIconStyle = `w-0 h-0 ease-in-out duration-[--duration-sm]`;
 
   return (
     <div className="overflow-hidden relative rounded-[--border-radius]">
@@ -19,7 +33,11 @@ export default function Carousel() {
         className={"group/left left-0" + " " + controlStyle}
         onClick={() => setState(state - 1 < 1 ? 1 : state - 1)}
       >
-        <Arrow className="w-0 h-0 ease-in-out duration-[--duration-sm] group-hover/left:size-[100px] rotate-180" />
+        <Arrow
+          className={
+            "group-hover/left:size-[80%] rotate-180" + " " + controlIconStyle
+          }
+        />
       </div>
       <div
         className="flex transition-[--transition-cb] duration-[--duration-md]"
@@ -33,7 +51,13 @@ export default function Carousel() {
         className={"group/right right-0" + " " + controlStyle}
         onClick={() => setState(state + 1 > 3 ? 3 : state + 1)}
       >
-        <Arrow className="w-0 h-0 ease-in-out duration-[--duration-sm] group-hover/right:size-[100px]" />
+        <Arrow
+          className={
+            "group-hover/right:size-[80%]" +
+            " " +
+            controlIconStyle
+          }
+        />
       </div>
     </div>
   );
