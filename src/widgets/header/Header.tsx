@@ -1,10 +1,12 @@
 "use client";
 
+import Button from "@/shared/ui/button/Button";
+
 export default function Header() {
   return (
     <header className="bg-[--color-s] p-2 absolute w-full">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-row-reverse gap-[--gap-sm] sm:gap-[--gap-md]">
+      <div className="max-w-[1800px] mx-auto">
+        <div className="flex flex-row-reverse gap-5  items-center">
           <a
             href="#"
             className=""
@@ -33,6 +35,13 @@ export default function Header() {
               loading="lazy"
             />
           </a>
+
+          <Button
+            title="Записаться на консультацию"
+            onClick={() => {
+              window.open("https://t.me/Ellina_psiholog", "_blank");
+            }}
+          />
         </div>
       </div>
     </header>

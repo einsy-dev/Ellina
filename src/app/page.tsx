@@ -12,7 +12,8 @@ export default function Home() {
         <div className="flex flex-col gap-[--gap-md] lg:[&>*:nth-child(odd)]:flex-row-reverse lg:[&>*:nth-child(odd)]:text-right text-center lg:text-start">
           {homePageData.map((item) => (
             <Card key={uuid()} img={item.img} title={item.title}>
-              {item.text}
+              {item.text ||
+                item.list?.map((item) => <li key={uuid()}>{item}</li>)}
             </Card>
           ))}
         </div>

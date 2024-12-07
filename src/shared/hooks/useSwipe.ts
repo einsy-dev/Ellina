@@ -16,12 +16,9 @@ export default function useSwipe(
   function touchEnd(e: any) {
     endX = e.changedTouches[0].clientX;
     endY = e.changedTouches[0].clientY;
-    if (
-      Math.abs(startX - endX) < ignoreValue ||
-      Math.abs(startY - endY) > ignoreValue / 2
-    ) {
+    if (Math.abs(startX - endX) < ignoreValue || Math.abs(startY - endY) > 150)
       return;
-    }
+
     if (startX - endX > 0) {
       callback(false);
     } else {
