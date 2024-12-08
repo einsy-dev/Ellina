@@ -30,3 +30,14 @@ export const homePageData = [
     ]
   }
 ];
+
+export const qaData = [
+  {
+    title: "Что такое депрессия?",
+    text: "Депрессия - Депрессия - это психическое расстройство, характеризующееся длительным и выраженным снижением настроения, интереса к окружающему миру и aktivitam, а также нарушениями сна, аппетита и других физиологических функций."
+  },
+  {
+    title: "Что такое cтресс?",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus"
+  }
+];
