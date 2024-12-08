@@ -1,10 +1,19 @@
 "use client";
-import { useEffect } from "react";
-
+import { RefObject, useEffect } from "react";
+/**
+ * useSwipe hook to detect swipe gestures on an element.
+ *
+ * @param {RefObject<HTMLElement | null>} elementRef - Reference to the target element
+ * @param {(right: boolean) => void} callback - Function called with swipe direction
+ * @param {React.DependencyList} deps - Dependency list for the useEffect
+ * @param {number} ignoreValue - Minimum swipe distance threshold
+ * @returns {void}
+ */
 export default function useSwipe(
-  callback: any,
-  deps: any[] = [],
-  ignoreValue = 100
+  elementRef: RefObject<HTMLElement | null>,
+  callback: (right: boolean) => void,
+  deps: React.DependencyList = [],
+  ignoreValue: number = 100
 ) {
   let startX: number, endX: number, startY: number, endY: number;
   startX = endX = startY = endY = 0;
@@ -28,12 +37,16 @@ export default function useSwipe(
   }
 
   useEffect(() => {
-    document.addEventListener("touchstart", touchStart, false);
-    document.addEventListener("touchend", touchEnd, false);
+    if (!elementRef) return;
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      currentElement.addEventListener("touchstart", touchStart, false);
+      currentElement.addEventListener("touchend", touchEnd, false);
 
-    return () => {
-      document.removeEventListener("touchstart", touchStart, false);
-      document.removeEventListener("touchend", touchEnd, false);
-    };
+      return () => {
+        currentElement.removeEventListener("touchstart", touchStart, false);
+        currentElement.removeEventListener("touchend", touchEnd, false);
+      };
+    }
   }, deps);
 }

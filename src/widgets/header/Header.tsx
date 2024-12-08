@@ -7,7 +7,7 @@ export default function Header() {
     <header className="bg-[--color-s] p-2 absolute w-full">
       <div className="max-w-[1800px] mx-auto">
         <div className="flex flex-row-reverse gap-5  items-center">
-          <a
+          {/* <a
             href="#"
             className=""
             target="_blank"
@@ -34,7 +34,7 @@ export default function Header() {
               alt=""
               loading="lazy"
             />
-          </a>
+          </a> */}
 
           <Button
             title="Записаться на консультацию"

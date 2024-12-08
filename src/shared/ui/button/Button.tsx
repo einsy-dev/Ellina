@@ -7,8 +7,10 @@ export default function Button({
   onClick: () => void;
 }) {
   return (
-    <li className="px-[25px] py-[5px] border-2 hover:shadow-xl cursor-pointer font-bold h-fit">
-      <div onClick={onClick}>{title}</div>
-    </li>
+    <div className="px-[15px] py-[5px]  xl:px-[25px] border-2 hover:shadow-xl cursor-pointer font-bold h-fit">
+      <button type="button" className="text-nowrap" onClick={onClick}>
+        {title}
+      </button>
+    </div>
   );
 }
