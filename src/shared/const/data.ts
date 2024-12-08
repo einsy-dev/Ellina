@@ -39,5 +39,9 @@ export const qaData = [
   {
     title: "Что такое cтресс?",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus"
+  },
+  {
+    title: "Как высоко?",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis explicabo ratione, repellat unde necessitatibus"
   }
 ];
