@@ -1,5 +1,6 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import localFont from "next/font/local";
 import Header from "@/widgets/header/Header";
 import Footer from "@/widgets/footer/Footer";
@@ -15,9 +16,22 @@ const geistMono = localFont({
   weight: "100 900"
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1
+};
+
 export const metadata: Metadata = {
-  title: "ellinabuch",
-  description: "",
+  title: "Эллина Буч - консультация психолога онлайн",
+  description:
+    "Психологическая помощь. Персональные консультации психолога онлайн, первая консультация бесплатно",
+  keywords:
+    "психолог, психология, психология онлайн, психология онлайн, консультации, консультация",
+  robots: "index, follow",
+  authors: [{ name: "ellinabuch" }],
+  generator: "Next.js, TailwindCSS, Typescript, React",
+  manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico"
   }
@@ -37,6 +51,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-WSP3R1M8ZN" />
     </html>
   );
 }

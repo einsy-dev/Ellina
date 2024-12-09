@@ -1,0 +1,16 @@
+{
+	"name": "EllinaBuch",
+	"short_name": "EB",
+	"description": "Психологическая помощь, консультации",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"type": "image/x-icon",
+			"sizes": "512x512 192x192 64x64 32x32 24x24 16x16"
+		}
+	],
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#000000"
+}

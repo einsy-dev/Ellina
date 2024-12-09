@@ -10,7 +10,8 @@
     "serve": "serve out -l 3000"
   },
   "dependencies": {
-    "next": "15.0.3",
+    "@next/third-parties": "^15.0.4",
+    "next": "^15.0.4",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106"
   },
