@@ -4,7 +4,7 @@ import Button from "@/shared/ui/button/Button";
 
 export default function Header() {
   return (
-    <header className="bg-[--color-s] p-2 absolute w-full">
+    <header className="bg-[--color-s] p-2 fixed  w-full">
       <div className="max-w-[1800px] mx-auto">
         <div className="flex flex-row-reverse gap-5  items-center">
           {/* <a

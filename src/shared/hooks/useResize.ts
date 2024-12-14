@@ -5,7 +5,7 @@ const config = { sm: 440, md: 840, lg: 1200 };
 
 type Size = "sm" | "md" | "lg";
 
-export default function useResize(size: Size) {
+export default function useResize(size: Size): boolean {
   const [state, setState]: any = useState(window.innerWidth <= config[size]);
 
   const handleResize = (size: number) => {

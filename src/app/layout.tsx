@@ -1,20 +1,8 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import localFont from "next/font/local";
 import Header from "@/widgets/header/Header";
 import Footer from "@/widgets/footer/Footer";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900"
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900"
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -23,11 +11,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Эллина Буч - консультация психолога онлайн",
+  title: "Онлайн Психолог Эллина Буч - Консультации и Помощь",
   description:
-    "Психологическая помощь. Персональные консультации психолога онлайн, первая консультация бесплатно",
+    "Онлайн психологические консультации с сертифицированным психологом Эллиной Буч. Получите профессиональную помощь и поддержку в решении личных и семейных проблем. Консультации проводятся онлайн в удобное для вас время.",
   keywords:
-    "психолог, психология, психология онлайн, психология онлайн, консультации, консультация",
+    "онлайн психологические консультации, психологическая помощь онлайн, консультации психолога онлайн, онлайн психологическая помощь для взрослых, психологические консультации для пар онлайн, психолог, психология, эллина, буч, ellina, buch",
   robots: "index, follow",
   authors: [{ name: "ellinabuch" }],
   generator: "Next.js, TailwindCSS, Typescript, React",
@@ -44,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col relative min-h-screen`}
-      >
+      <body className="antialiased flex flex-col relative min-h-screen">
         <Header />
         {children}
         <Footer />

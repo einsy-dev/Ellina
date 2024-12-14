@@ -15,7 +15,7 @@ export default function Card({ img, title, children }: CardProps) {
           alt={title}
         />  
       </div>
-      <div className="w-full lg:w-[60%] flex flex-col  gap-[--gap-sm] text-[22px]">
+      <div className="w-full lg:w-[60%] flex flex-col  gap-[--gap-sm] text-[22px] justify-center">
         <h1 className="text-[2rem] sm:text-[3rem]">{title}</h1>
         <div className="px-5 lg:px-0">{children}</div>
       </div>
