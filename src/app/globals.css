@@ -5,9 +5,9 @@
 :root {
   --p-sm: 10px;
   --p-md: 30px;
-  --color-p: #f7f3ed;
+  --color-p: #4F4F4F;
   --color-s: #a47864;
-  --color-f: #1e1810;
+  --background-color: #f3f4f6;
   --color-opacity: rgba(0, 0, 0, 0.5);
   --gap-sm: 20px;
   --gap-md: 50px;
@@ -24,7 +24,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-  color: var(--color-f);
+  color: var(--color-p);
   border-color: var(--color-f);
   fill: var(--color-f);
 }

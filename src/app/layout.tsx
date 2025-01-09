@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { Lora } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/widgets/header/Header";
 import Footer from "@/widgets/footer/Footer";
@@ -25,6 +26,11 @@ export const metadata: Metadata = {
   }
 };
 
+const lora = Lora({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"]
+});
+
 export default function RootLayout({
   children
 }: Readonly<{
@@ -32,9 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased flex flex-col relative min-h-screen">
+      <body className={lora.className + " antialiased flex flex-col relative min-h-screen bg-[--background-color] font-bold"}>
         <Header />
-        {children}
+        <div className="">{children}</div>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-WSP3R1M8ZN" />
