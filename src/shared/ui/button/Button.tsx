@@ -1,16 +1,11 @@
-"use client";
-export default function Button({
-  title,
-  onClick
-}: {
+interface ButtonProps {
   title: string;
-  onClick: () => void;
-}) {
+  onClick?: () => void;
+}
+export default function Button({ title, onClick }: ButtonProps) {
   return (
-    <div className="px-[15px] py-[5px]  xl:px-[25px] border-2 hover:shadow-xl cursor-pointer font-bold h-fit">
-      <button type="button" className="text-nowrap" onClick={onClick}>
-        {title}
-      </button>
-    </div>
+    <button className="bg-[#2B2C30] text-[--color-s] w-fit px-[30px] py-[20px] ml-auto" onClick={onClick}>
+      {title}
+    </button>
   );
 }
