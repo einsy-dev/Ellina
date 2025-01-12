@@ -3,6 +3,7 @@ import Menu from "@/shared/ui/menu/Menu";
 import Sidebar from "../sidebar/Sidebar";
 import { useRef, useState } from "react";
 import { useClickOutside } from "@/shared/hooks/useClickOutside";
+import Nav from "../nav/Nav";
 
 export default function Header() {
   const [sideBar, setSideBar] = useState(false);
@@ -17,18 +18,7 @@ export default function Header() {
         <div className="text-[36px]">ЭБ</div>
         <nav className="text-[26px]">
           <ul className="gap-[50px] hidden lg:flex">
-            <li>
-              <a href="#about">обо мне</a>
-            </li>
-            <li>
-              <a href="#clients">клиентам</a>
-            </li>
-            <li>
-              <a href="#education">образование</a>
-            </li>
-            <li>
-              <a href="#book">запись</a>
-            </li>
+            <Nav />
           </ul>
         </nav>
         <div className="lg:hidden">
