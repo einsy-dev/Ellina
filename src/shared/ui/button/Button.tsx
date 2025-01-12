@@ -1,11 +1,18 @@
 interface ButtonProps {
   title: string;
-  onClick?: () => void;
+  className?: string;
+  [key: string]: any;
 }
-export default function Button({ title, onClick }: ButtonProps) {
+export default function Button({ title, className, ...props }: ButtonProps) {
   return (
-    <button className="bg-[#2B2C30] text-[--color-s] w-fit px-[30px] py-[20px] ml-auto" onClick={onClick}>
+    <a
+      href="https://t.me/Ellina_psiholog"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className + " bg-[#2B2C30] text-[--color-s] md:mr-[20px] xl:mr-[90px] md:w-fit px-[30px] py-[20px] ml-auto text-center"}
+      {...props}
+    >
       {title}
-    </button>
+    </a>
   );
 }

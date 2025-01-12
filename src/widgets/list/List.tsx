@@ -5,9 +5,9 @@ interface ListProps {
 
 export default function List({ header, list }: ListProps) {
   return (
-    <div className="bg-[--color-s] p-[33px] rounded-[--border-radius]">
-      <h1 className="text-[48px]">{header}</h1>
-      <ul className="list-disc mt-[--gap-sm] ml-[120px] mb-[145px] pt-[--gap-sm]">
+    <div className="mx-[20px] lg:mx-[90px]  bg-[--color-s] p-[33px] rounded-[--border-radius]">
+      <h1 className="text-[32px] xl:text-[48px] mb-10">{header}</h1>
+      <ul className="list-disc text-[20px] lg:text-[32px] xl:ml-[10%] flex flex-col gap-[--gap-sm] ml-5">
         {list.map((item, index) => (
           <li key={index} className="">
             {item}

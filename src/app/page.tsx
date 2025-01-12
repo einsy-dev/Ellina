@@ -7,22 +7,22 @@ import List from "@/widgets/list/List";
 
 export default function Home() {
   return (
-    <main className=" lg:px-[90px] h-full flex flex-col gap-[--gap-lg]">
+    <main className="h-full flex flex-col gap-[--gap-lg]">
       <Intro />
-      <div className="mx-auto flex flex-col gap-[--gap-lg] lg:px-5 2xl:px-0">
-        <div className="flex flex-col text-[24px] gap-[110px]">
+      <div className="mx-auto flex flex-col gap-[--gap-md] lg:gap-[--gap-lg] lg:px-5 2xl:px-0">
+        <div className="flex flex-col text-[24px] gap-[--gap-md]" id="about">
           <Block header={data.about.text.header} text={data.about.text.text} />
           <List header={data.about.list.header} list={data.about.list.list} />
         </div>
-        <div className="flex flex-col text-[24px] gap-[110px]">
+        <div className="flex flex-col text-[24px] gap-[--gap-md]" id="clients">
           <Block header={data.clients.text.header} text={data.clients.text.text} />
-          <Button title="Записаться на консультацию" />
+          <Button title="запись на консультацию" className="w-full" id="book"/>
           <List header={data.clients.list.header} list={data.clients.list.list} />
-          <div className="">
+          <div className="px-[20px] lg:px-[90px]">
             <p>{data.goal}</p>
           </div>
         </div>
-        <Education />
+        <Education id="education" />
       </div>
     </main>
   );

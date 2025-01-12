@@ -1,8 +1,8 @@
-export default function Education() {
+export default function Education({ ...props }: any) {
   return (
-    <div className="flex flex-col text-[24px] gap-[110px]">
+    <div className="flex flex-col text-[20px] lg:text-[24px] gap-[110px] px-[20px] lg:px-[90px]" {...props}>
       <div className="">
-        <h1 className="text-[48px]">Образование</h1>
+        <h1 className="text-[2em]">Образование</h1>
         <p className="mt-[--gap-sm]">
           Балтийский федеральный университет имени Иммануила Канта
           <br />
@@ -12,7 +12,7 @@ export default function Education() {
         </p>
       </div>
       <div className="flex flex-col gap-[--gap-sm]">
-        <h2 className="text-[36px]">Дополнительные обучения и квалиффикации:</h2>
+        <h2 className="text-[1.5em]">Дополнительные обучения и квалиффикации:</h2>
         <p className="">
           Биологические основы психопотологий. <br />
           Балтийский федеральный университет имени Иммануила Канта <br />
