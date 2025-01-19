@@ -1,6 +1,6 @@
-export default function Nav() {
+export default function Nav({ className }: { className?: string }) {
   return (
-    <>
+    <ul className={className}>
       <li>
         <a href="#about">обо мне</a>
       </li>
@@ -13,6 +13,6 @@ export default function Nav() {
       <li>
         <a href="#book">запись</a>
       </li>
-    </>
+    </ul>
   );
 }

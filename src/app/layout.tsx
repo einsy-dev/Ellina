@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lora.className + " antialiased flex flex-col relative min-h-screen bg-[--background-color] font-bold"}>
+      <body className={lora.className + " antialiased flex flex-col relative min-h-screen bg-[--background-color] font-boldm max-w-[1400px] mx-auto"}>
         <Header />
         <div className="">{children}</div>
         <Footer />
